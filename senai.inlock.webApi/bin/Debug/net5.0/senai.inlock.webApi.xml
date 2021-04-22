@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>senai.inlock.webApi</name>
+    </assembly>
+    <members>
+        <member name="M:senai.inlock.webApi.Controllers.UsuariosController.Login(senai.inlock.webApi.Domains.UsuariosDomain)">
+            <summary>
+            Faz a autenticação do usuário
+            </summary>
+            <param name="login">objeto com os dados de e-mail e senha</param>
+            <returns>Um status code e, em caso de sucesso, os dados do usuário buscado</returns>
+        </member>
+    </members>
+</doc>

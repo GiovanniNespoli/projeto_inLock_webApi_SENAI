@@ -1,0 +1,42 @@
+CREATE DATABASE Inlock_games;
+GO
+
+USE Inlock_games;
+GO
+
+CREATE TABLE Estudios(
+
+	IdEstudio		INT PRIMARY KEY IDENTITY,
+	NomeEstudio		VARCHAR(250) NOT NULL,
+
+);
+GO
+
+CREATE TABLE Jogos(
+
+	IdJogo			INT PRIMARY KEY IDENTITY,
+	IdEstudio		INT FOREIGN KEY REFERENCES Estudios(IdEstudio),
+	NomeJogo		VARCHAR(250) NOT NULL UNIQUE,
+	Descricao		VARCHAR(500) NOT NULL,
+	DataLancamento	VARCHAR(250) NOT NULL,
+	Valor			INT NOT NULL,
+
+);
+
+
+CREATE TABLE TipoUsuarios(
+
+	IdTipoUsuario	INT PRIMARY KEY IDENTITY,
+	Titulo			VARCHAR(250) NOT NULL,
+
+);
+GO
+
+CREATE TABLE Usuarios(
+
+	IdUsuario		INT PRIMARY KEY IDENTITY,
+	IdTipoUsuario	INT FOREIGN KEY REFERENCES TipoUsuarios(IdTipoUsuario),
+	Email			VARCHAR(250) NOT NULL UNIQUE,
+	Senha			VARCHAR(250) NOT NULL,
+
+);
